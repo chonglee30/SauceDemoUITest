@@ -1,0 +1,24 @@
+{
+  "name": "saucedemouitest",
+  "version": "1.0.0",
+  "description": "Swag Labs UI Test Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chonglee30/SauceDemoUITest.git"
+  },
+  "author": "Chong S. Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chonglee30/SauceDemoUITest/issues"
+  },
+  "homepage": "https://github.com/chonglee30/SauceDemoUITest#readme",
+  "devDependencies": {
+    "chai-sorted": "^0.2.0",
+    "cypress": "^14.2.1",
+    "cypress-map": "^1.46.0"
+  }
+}
