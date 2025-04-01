@@ -28,5 +28,16 @@ export const LoginPage = {
   cy.contains('[data-test=error]', errorMsg).should('be.visible');
   LoginPage.getUsername().should('have.class', 'error')
   LoginPage.getPassword().should('have.class', 'error')
+ },
+
+ sessionUserLogin(username, password) {
+  cy.session(`User ${username} Session`, () => {
+    cy.log('**Session Log In**')
+    cy.visit('/')
+    LoginPage.getUsername().type(username)
+    LoginPage.getPassword().type(password, {log: false})
+    LoginPage.getLogin().click()
+    cy.location('pathname').should('equal', '/inventory.html')
+  })
  }
 }

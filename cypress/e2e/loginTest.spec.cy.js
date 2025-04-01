@@ -1,15 +1,11 @@
 /// <reference types="cypress" />
-
 import { LoginPage } from '../pages/loginPage'
-
 
 const user = Cypress.env('users').standard
 const lockedOutUser = Cypress.env('users').lockedOut
 
-
 describe('User Login Test', () => {
   context('Expected User Login Test Scenario', () => {
-
     it("Success User Login land in inventory page", () => {
       cy.log('**log in**')
       cy.visit('/')
@@ -18,9 +14,7 @@ describe('User Login Test', () => {
       LoginPage.getPassword().type(user.password, { log: false })
       LoginPage.clickLoginButton().click()
       cy.location('pathname').should('equal', '/inventory.html')
-
     });
-
   });
 
   context('Unexpected User Login Test Scenario', () => {
