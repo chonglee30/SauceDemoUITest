@@ -4,7 +4,8 @@
   "description": "Swag Labs UI Test Automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tsc --noEmit --pretty"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "chai-sorted": "^0.2.0",
     "cypress": "^14.2.1",
-    "cypress-map": "^1.46.0"
+    "cypress-map": "^1.46.0",
+    "typescript": "^5.8.2"
   }
 }

@@ -1,6 +1,3 @@
-// @ts-check
-/// <reference types="cypress" />
-
 export const LoginPage = {
   getUsername() {
     return cy.get('[data-test="username"]')
@@ -24,19 +21,26 @@ export const LoginPage = {
   LoginPage.getPassword().should('not.have.class', 'error')
 },
 
- displayError(errorMsg) {
+/**
+   * @param errorMsg The expected error message
+   */
+ displayError(errorMsg: string) {
   cy.contains('[data-test=error]', errorMsg).should('be.visible');
   LoginPage.getUsername().should('have.class', 'error')
   LoginPage.getPassword().should('have.class', 'error')
  },
 
- sessionUserLogin(username, password) {
+ /**
+   * @param username  username
+   * @param password  password
+ */
+ sessionUserLogin(username: string, password: string) {
   cy.session(`User ${username} Session`, () => {
     cy.log('**Session Log In**')
     cy.visit('/')
     LoginPage.getUsername().type(username)
     LoginPage.getPassword().type(password, {log: false})
-    LoginPage.getLogin().click()
+    LoginPage.clickLoginButton()
     cy.location('pathname').should('equal', '/inventory.html')
   })
  }

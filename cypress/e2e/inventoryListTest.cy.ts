@@ -1,5 +1,5 @@
-/// <reference types="cypress" />
 import 'cypress-map'
+// @ts-ignore
 chai.use(require('chai-sorted'))
 
 const { _ } = Cypress // importing lodash
@@ -32,7 +32,7 @@ describe('Inventory Test', () => {
     });
 
     it("Check every items in the inventory Lists", function() {
-        this.inventoryItems.forEach(function(listItem) {
+        this.inventoryItems.forEach(function(listItem: any) {
           cy.log(`*** List Item: ${listItem.name}***`)
           cy.contains('.inventory_item', listItem.name).within(function(){
             cy.contains('.inventory_item_name', listItem.name);

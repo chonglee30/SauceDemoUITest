@@ -1,5 +1,5 @@
-/// <reference types="cypress" />
 import 'cypress-map'
+// @ts-ignore
 chai.use(require('chai-sorted'))
 
 describe('Sorting Test', () => {
@@ -17,7 +17,7 @@ describe('Sorting Test', () => {
       * Sort Item Options: by price
       * @param {'lohi'|'hilo'|'az'|'za'} order
       */
-  function sortItemOption(order) {
+  function sortItemOption(order: string) {
     expect(order, 'sort order').to.be.oneOf(['lohi','hilo','az','za']);
     cy.log(`**sort by price ${order}**`)
     cy.get('[data-test="product-sort-container"]').select(order)

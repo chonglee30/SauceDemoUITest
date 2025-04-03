@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import { LoginPage } from '../pages/loginPage'
 
 const user = Cypress.env('users').standard
